@@ -1,0 +1,14 @@
+import aiogram
+from aiogram import Bot, Dispatcher, executor, types
+
+bot = Bot('key')
+dp = Dispatcher(bot)
+
+@dp.message_handler(commands=['start']) # content_types = ['photo'] or video или что то еще
+async def start(message: types.Message):
+    #await message.answer('Hello')
+    await message.reply('Hello')
+    # file = open('/some.png', 'rb')
+    # await message.answer_foto(file)
+
+executor.start_polling(dp)
